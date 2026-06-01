@@ -20,6 +20,8 @@
 
 비교 기준으로는 물리 기반 RTT 보정 + Weighted Robust Least Squares + Residual Correction 실험을 사용하였다. 이 비교 실험은 기지국별 bias와 신뢰도를 명시적으로 계산하고, Ridge Regression으로 잔여 오차를 보정하는 방식이다. 반면 본 보고서의 중심은 DQN 기반 강화학습 모델이며, 물리 기반 실험은 강화학습 결과가 어느 정도 수준인지 판단하기 위한 비교용 baseline으로만 사용하였다.
 
+데이터 셋으로 학습한 모델의 성능을 평가하기 위해 700개의 data set중 500개는 train dataset으로 200개는 validation dataset으로 구분하여 실험을 진행하였다.
+
 전체 실험의 핵심 질문은 다음과 같다.
 
 | 질문 | 의미 |
