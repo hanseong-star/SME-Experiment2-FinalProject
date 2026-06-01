@@ -177,6 +177,8 @@ def your_algorithm(d_hat_u, p_bs):
 
 
 def main():
+    # 1) 입력 데이터 로드 — 채점기가 같은 폴더에 .mat 파일 자동 배치
+    mat_path = 'DH_FR1.mat'
     data = sio.loadmat(MAT_PATH, squeeze_me=False)
 
     BS_positions = np.asarray(data["BS_positions"], dtype=float)
@@ -189,16 +191,17 @@ def main():
     for u in range(num_user):
         p_hat[:, u] = your_algorithm(d_hat[:, u], BS_positions)
 
-    errors = np.sqrt(np.sum((p_hat - p) ** 2, axis=0))
+    # errors = np.sqrt(np.sum((p_hat - p) ** 2, axis=0))
 
-    print("validation file:", MAT_PATH)
-    print("p_hat shape:", p_hat.shape)
-    print("samples:", num_user)
-    print("mean error:", float(np.mean(errors)))
-    print("median error:", float(np.median(errors)))
-    print("rmse:", float(np.sqrt(np.mean(errors ** 2))))
-    print("90% error:", float(np.percentile(errors, 90)))
-    print("max error:", float(np.max(errors)))
+    # 성능 평가에 사용
+    # print("validation file:", MAT_PATH)
+    # print("p_hat shape:", p_hat.shape)
+    # print("samples:", num_user)
+    # print("mean error:", float(np.mean(errors)))
+    # print("median error:", float(np.median(errors)))
+    # print("rmse:", float(np.sqrt(np.mean(errors ** 2))))
+    # print("90% error:", float(np.percentile(errors, 90)))
+    # print("max error:", float(np.max(errors)))
 
     return p_hat
 
