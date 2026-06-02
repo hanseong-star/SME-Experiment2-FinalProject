@@ -1,6 +1,6 @@
 # DQN 기반 RTT 위치 추정 실험 보고서
 
-##<div align="right">
+<div align="right">
   122224398 김한성
 </div>
 
