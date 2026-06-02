@@ -6,11 +6,6 @@ import torch
 import torch.nn as nn
 
 
-# ============================================================
-# [설계 파라미터] validation 파일 경로
-# 채점 환경에서 DH_FR1.mat를 써야 하면 아래 값을 "DH_FR1.mat"로 바꾸면 됨
-# ============================================================
-MAT_PATH = "DH_FR1.mat"
 
 
 # ============================================================
@@ -179,7 +174,7 @@ def your_algorithm(d_hat_u, p_bs):
 def main():
     # 1) 입력 데이터 로드 — 채점기가 같은 폴더에 .mat 파일 자동 배치
     mat_path = "DH_FR1.mat"
-    data = sio.loadmat(MAT_PATH, squeeze_me=False)
+    data = sio.loadmat(mat_path, squeeze_me=False)
 
     BS_positions = np.asarray(data["BS_positions"], dtype=float)
     d_hat = np.asarray(data["d_hat"], dtype=float)
